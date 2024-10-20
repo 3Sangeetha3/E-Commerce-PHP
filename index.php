@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body class="bg-[#F5EDE1]">
+<?php
+    // Include the configuration file
+    require_once 'config/config.php';
+    
+    $current_page = basename($_SERVER['PHP_SELF']);
+?>
+
 
 <!-- Navbar -->
 <?php include 'components/navbar.php'; ?>
