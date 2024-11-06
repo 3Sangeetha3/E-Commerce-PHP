@@ -41,16 +41,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../index.php");
             exit();
         } else {
-            echo "Invalid password. Please try again.";
+            // echo "Invalid password. Please try again.";
+
+            // Set error message for invalid password
+            $_SESSION['error'] = "Invalid password. Please try again.";
+            header("Location: ../pages/signIn.php"); // Adjust path as needed
+            exit();
         }
     } else {
-        // Redirect to sign-up page if user does not exist
-        header("Location: ../signUp.php");
+        // // Redirect to sign-up page if user does not exist
+        // header("Location: ../signUp.php");
+        // exit();
+
+        $_SESSION['error'] = "User does not exist. Please sign up.";
+        header("Location: ../pages/signIn.php"); // Adjust path as needed
         exit();
     }
 } else {
     // Redirect to sign-in page if accessed directly
-    header("Location: ../signIn.php");
+    header("Location: ../pages/signIn.php");
     exit();
 }
 ?>

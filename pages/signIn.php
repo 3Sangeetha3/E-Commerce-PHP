@@ -20,12 +20,16 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <!-- Navbar -->
 <?php include '../components/navbar.php'; ?>
 
+<?php
+session_start();
+?>
 
 <!-- Sign In Section -->
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6 my-5">
             <h2 class="text-dark mt-5 mb-3">Sign In</h2>
+
             <form action="../backend/process_signin.php" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -37,7 +41,17 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
                 <button type="submit" class="btn text-light" style="background-color: #FF7F50;">Sign In</button>
             </form>
-            <p class="mt-3">Don't have an account? <a href="signUp.php">Sign Up</a></p>
+            <!-- Display error message -->
+            <?php if (isset($_SESSION['error'])): ?>
+                <div id="flash-error" class="alert alert-danger mt-3">
+                    <?php 
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']); // Clear the error after displaying
+                    ?>
+                </div>
+            <?php endif; ?>
+
+            <p class="mt-3">Don't have an account? <a href="../pages/signUp.php">Sign Up</a></p>
         </div>
         <div class="col-md-6 p-0">
             <img src="../assets/images/signIn.svg" class="img-fluid" alt="Sign-in">
