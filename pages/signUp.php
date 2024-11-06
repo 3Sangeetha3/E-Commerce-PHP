@@ -11,19 +11,22 @@
     <link rel="stylesheet" href="../assets/css/style.css"> 
 </head>
 <body class="bg-[#F5EDE1]">
-<?php
-// Include the configuration file
-require_once '../config/config.php';
-$current_page = basename($_SERVER['PHP_SELF']);
-?>
+    <?php
+        session_start();
+    ?>
+    <?php
+    // Include the configuration file
+    require_once '../config/config.php';
+    $current_page = basename($_SERVER['PHP_SELF']);
+    ?>
 
-<!-- Navbar -->
-<?php include '../components/navbar.php'; ?>
+    <!-- Navbar -->
+    <?php include '../components/navbar.php'; ?>
 
 <!-- Signup Section -->
-<div class="container my-5">
+<!-- <div class="container my-5">
     <h2>Signup</h2>
-    <form action="../backend/process_signup.php" method="POST"> <!-- Adjust path -->
+    <form action="../backend/process_signup.php" method="POST"> Adjust path
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -41,6 +44,45 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <hr>
     <h5>Or Signup with Google</h5>
     <a href="login_with_google.php" class="btn btn-danger">Sign in with Google</a>
+</div> -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6 my-5">
+            <h2 class="text-dark mt-5 mb-3">Sign Up</h2>
+
+            <form action="../backend/process_signup.php" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text"  placeholder="Enter your name" class="form-control form-control-sm" id="name" name="name" required style="width: 75%;">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" placeholder="Enter your Email" class="form-control form-control-sm" id="email" name="email" required style="width: 75%;">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" placeholder="Enter your password"class="form-control form-control-sm" id="password" name="password" required style="width: 75%;">
+                </div>
+
+                <!-- Display error message -->
+                <?php if (isset($_SESSION['error'])): ?>
+                    <div class="alert alert-danger mt-3">
+                        <?php 
+                            echo $_SESSION['error'];
+                            unset($_SESSION['error']); // Clear the error after displaying
+                        ?>
+                    </div>
+                <?php endif; ?>
+
+                <button type="submit" class="btn text-light" style="background-color: #FF7F50;">Sign Up</button>
+            </form>
+
+            <p class="mt-3">Already have an account? <a href="../pages/signIn.php">Sign In</a></p>
+        </div>
+        <div class="col-md-6 p-0">
+            <img src="../assets/images/signIn.svg" class="img-fluid" alt="Sign-in">
+        </div>
+    </div>
 </div>
 
 <!-- Footer -->

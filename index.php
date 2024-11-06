@@ -24,13 +24,13 @@
 
 <!-- Hero Section -->
 <div class="container my-5">
-    <div class="row">
-        <div class="col-md-6 text-dark">
+    <div class="row d-flex align-items-center">
+        <div class="col-md-6 text-center text-md-start text-dark">
             <h1>Welcome to Koza</h1>
             <p>Discover the finest leather products crafted with excellence.</p>
             <a href="#" class="btn text-light" style="background-color: #FF7F50;">Shop Now</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center">
             <img src="assets/images/image1.svg" class="img-fluid" alt="Leather Products">
         </div>
     </div>
