@@ -11,6 +11,7 @@
                 <ul class="list-unstyled mb-0">
                     <li><a href="../index.php" class="text-light">Home</a></li>
                     <li><a href="#" class="text-light">Shop</a></li>
+                    <li><a href="../pages/AboutUs.php" class="text-light">Shop</a></li>
                     <li><a href="#" class="text-light">Contact Us</a></li>
                     <li><a href="../pages/signIn.php" class="text-light">Sign In</a></li>
                     <li><a href="../pages/signUp.php" class="text-light">Sign Up</a></li>

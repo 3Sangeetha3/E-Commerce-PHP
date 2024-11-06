@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  padding-top: 70px;
 }
 
 /* Navbar styles */
@@ -23,18 +24,25 @@ body {
 }
 
 .navbar .nav-item:hover {
-  border-radius: 30px;
+  display: inline-block;
+  border-radius: 6px;
   background-color: #ff7f50;
   color: #f5ede1;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.nav-item .nav-link.active {
+/* .nav-item .nav-link.active {
     color:#ff7f50;
-}
+} */
 
 .nav-item .nav-link.active:hover {
     color:#f5ede1;
 }
+
+.navbar-nav .nav-item .nav-link.active {
+  color: #f8f9fa !important;
+  font-weight: bold;
+}
+
 
 
 /* SignIn page */

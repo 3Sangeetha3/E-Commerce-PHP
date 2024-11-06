@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body class="bg-[#F5EDE1]">
 <?php
@@ -27,7 +29,7 @@ session_start();
 <!-- Sign In Section -->
 <div class="container my-5">
     <div class="row">
-        <div class="col-md-6 my-5">
+        <div class="col-md-6 my-5 animate__animated animate__slideInLeft">
             <h2 class="text-dark mt-5 mb-3">Sign In</h2>
 
             <form action="../backend/process_signin.php" method="POST">
@@ -54,7 +56,7 @@ session_start();
             <p class="mt-3">Don't have an account? <a href="../pages/signUp.php">Sign Up</a></p>
         </div>
         <div class="col-md-6 p-0">
-            <img src="../assets/images/signIn.svg" class="img-fluid" alt="Sign-in">
+            <img src="../assets/images/signIn.svg" class="img-fluid animate__animated animate__slideInRight" alt="Sign-in">
         </div>
     </div>
 </div>

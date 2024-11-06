@@ -23,7 +23,7 @@
 <?php include 'components/navbar.php'; ?>
 
 <!-- Hero Section -->
-<div class="container my-5">
+<div class="container">
     <div class="row d-flex align-items-center">
         <div class="col-md-6 text-center text-md-start text-dark">
             <h1>Welcome to Koza</h1>

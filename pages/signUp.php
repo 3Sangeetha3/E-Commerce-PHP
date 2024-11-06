@@ -47,7 +47,7 @@
 </div> -->
 <div class="container my-5">
     <div class="row">
-        <div class="col-md-6 my-5">
+        <div class="col-md-6 my-5 animate__animated animate__slideInLeft">
             <h2 class="text-dark mt-5 mb-3">Sign Up</h2>
 
             <form action="../backend/process_signup.php" method="POST">
@@ -80,7 +80,7 @@
             <p class="mt-3">Already have an account? <a href="../pages/signIn.php">Sign In</a></p>
         </div>
         <div class="col-md-6 p-0">
-            <img src="../assets/images/signIn.svg" class="img-fluid" alt="Sign-in">
+            <img src="../assets/images/signup.svg" class="img-fluid animate__animated animate__slideInRight" alt="Sign-in">
         </div>
     </div>
 </div>

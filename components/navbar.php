@@ -1,5 +1,9 @@
 <!-- components/navbar.php -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ 
+<!-- animate css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top animate__animated animate__slideInDown">
   <div class="container p-3">
     <a class="navbar-brand" href="#">Koza</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,19 +15,19 @@
           <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="/E-commerce/index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link <?php echo ($current_page == 'AboutUs.php') ? 'active' : ''; ?>" href="/E-commerce/pages/AboutUs.php">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+          <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>" href="/E-commerce/pages/contact.php">Contact Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" <?php echo ($current_page == 'signIn.php') ? 'active' : ''; ?> href="/E-commerce/pages/signIn.php">Sign In</a>
+          <a class="nav-link <?php echo ($current_page == 'signIn.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signIn.php">Sign In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" <?php echo ($current_page == 'signUp.php') ? 'active' : ''; ?> href="/E-commerce/pages/signUp.php">Sign Up</a>
+          <a class="nav-link <?php echo ($current_page == 'signUp.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signUp.php">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart</a>
+          <a class="nav-link <?php echo ($current_page == 'cart.php') ? 'active' : ''; ?>" href="/E-commerce/pages/cart.php">Cart</a>
         </li>
       </ul>
     </div>
