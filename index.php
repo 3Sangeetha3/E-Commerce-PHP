@@ -39,6 +39,15 @@
         </div>
     </div>
 
+    <!-- Banner -->
+    <section id="banner" class="my-4 p-5">
+        <div class="ml-5 mr-5">
+            <h4>MID SEASON'S SALE</h4>
+            <h1>Elevate your savings! <br>Get up to 20-50% off on orders above ₹4999.</h1>
+            <a href="/E-commerce/pages/products.php" id="shopNowButton" class="btn text-light animate__animated animate__jello" style="background-color: #FF7F50;">Shop Now</a>
+        </div>
+    </section>
+
     <!-- Featured Products Section -->
     <div class="container my-4 py-4">
         <h2 style="color: #FF7F50;" class="mt-5 mb-5">Featured Products</h2>

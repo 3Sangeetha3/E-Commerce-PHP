@@ -72,3 +72,43 @@ footer {
   padding: 15px;
   text-align: center;
 }
+
+/* banner */
+#banner {
+  background-image: url('../images/home_img_1.jpg');
+  width: 100%;
+  min-height: 700px;
+  background-position: top 70px center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#banner h4{
+  color: coral;
+  font-weight: 400;
+}
+
+#banner h1 {
+  color: aliceblue;
+  font-weight: 600;
+}
+
+#banner button {
+  font-size: 0.8rem;
+  font-weight: 700;
+  outline: none;
+  border-radius: 2px;
+  border: none;
+  background-color: coral;
+  color: aliceblue;
+  padding: 13px 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+  margin-top: 15px;
+}
