@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
 ?>
 
@@ -15,6 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto d-flex gap-3">
+        <!-- Common Links -->
         <li class="nav-item">
           <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="/E-commerce/index.php">Home</a>
         </li>
@@ -25,17 +26,33 @@ if (session_status() === PHP_SESSION_NONE) {
           <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>" href="/E-commerce/pages/contact.php">Contact Us</a>
         </li>
 
-        <!-- Add Product Link (Visible only for Admins) -->
+        <!-- Admin-Specific Links -->
         <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
           <li class="nav-item">
             <a class="nav-link <?php echo ($current_page == 'add_product.php') ? 'active' : ''; ?>" href="/E-commerce/admin/add_product.php">Add Product</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'manage_users.php') ? 'active' : ''; ?>" href="/E-commerce/admin/manage_orders.php">Manage orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'admin_panel.php') ? 'active' : ''; ?>" href="/E-commerce/pages/admin_panel.php">Admin Panel</a>
+          </li>
         <?php endif; ?>
 
-        <!-- Conditional Welcome and Logout -->
+        <!-- User-Specific Links -->
+        <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'user'): ?>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'orders.php') ? 'active' : ''; ?>" href="/E-commerce/pages/orders.php">My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'profile.php') ? 'active' : ''; ?>" href="/E-commerce/pages/profile.php">Profile</a>
+          </li>
+        <?php endif; ?>
+
+        <!-- Welcome and Logout Links -->
         <?php if (isset($_SESSION['user_name'])): ?>
           <li class="nav-item">
-            <a class="nav-link text-warning" href="#">👋🏻 <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+            <a class="nav-link text-warning" href="#">👋🏻 Welcome, <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/E-commerce/pages/logout.php">
@@ -43,7 +60,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </a>
           </li>
         <?php else: ?>
-          <!-- Sign In and Sign Up only shown if user is not logged in -->
+          <!-- Sign In and Sign Up Links -->
           <li class="nav-item">
             <a class="nav-link <?php echo ($current_page == 'signIn.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signIn.php">Sign In</a>
           </li>
@@ -52,6 +69,7 @@ if (session_status() === PHP_SESSION_NONE) {
           </li>
         <?php endif; ?>
 
+        <!-- Cart Link -->
         <li class="nav-item">
           <a class="nav-link animate__animated animate__flip<?php echo ($current_page == 'cart.php') ? 'active' : ''; ?>" href="/E-commerce/pages/cart.php" id="cartLink">
             <img src="/E-commerce/assets/images/cart.svg" alt="Cart" class="cart-icon" style="width: 32px; height: 32px;">
@@ -66,17 +84,13 @@ if (session_status() === PHP_SESSION_NONE) {
 <script>
   function animateCartIcon() {
     const cartLink = document.getElementById('cartLink');
-
     cartLink.classList.remove('animate__flip');
     void cartLink.offsetWidth;
     cartLink.classList.add('animate__flip');
-
     setTimeout(() => {
       cartLink.classList.remove('animate__flip');
     }, 1000);
   }
-
   setInterval(animateCartIcon, 10000);
-
   animateCartIcon();
 </script>

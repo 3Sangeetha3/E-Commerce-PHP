@@ -16,6 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get the posted data
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $role = $_POST['role']; // Capture role from POST data
+
 
     // Prepare SQL statement
     $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
@@ -25,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if user exists
     if ($stmt->rowCount() > 0) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
+        
         // Verify password
         if (password_verify($password, $user['password'])) {
             // Save user data in session

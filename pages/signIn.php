@@ -38,6 +38,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <label for="password" class="form-label">Password</label>
                     <input type="password" placeholder="Enter your password"class="form-control form-control-sm" id="password" name="password" required style="width: 75%;">
                 </div>
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-control form-control-sm" id="role" name="role" required style="width: 75%;">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn text-light" style="background-color: #FF7F50;">Sign In</button>
             </form>
 

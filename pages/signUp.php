@@ -42,16 +42,13 @@
                         <input type="password" placeholder="Enter your password" class="form-control form-control-sm" id="password" name="password" required style="width: 75%;">
                     </div>
 
-                    <!-- User Role Dropdown (Visible to Admins only) -->
-                    <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
-                        <div class="mb-3">
-                            <label for="role" class="form-label">User Role</label>
-                            <select class="form-control form-control-sm" id="role" name="role" required style="width: 75%;">
-                                <option value="user" selected>User</option>
-                                <option value="admin">Admin</option>
-                            </select>
-                        </div>
-                    <?php endif; ?>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-control form-control-sm" id="role" name="role" required style="width: 75%;">
+                            <option value="user">User</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
 
                     <!-- Display error message -->
                     <?php if (isset($_SESSION['error'])): ?>
