@@ -42,7 +42,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <!-- User-Specific Links -->
         <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'user'): ?>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($current_page == 'orders.php') ? 'active' : ''; ?>" href="/E-commerce/pages/orders.php">My Orders</a>
+            <a class="nav-link <?php echo ($current_page == 'orders.php') ? 'active' : ''; ?>" href="/E-commerce/pages/my_orders.php">My Orders</a>
           </li>
         <?php endif; ?>
 

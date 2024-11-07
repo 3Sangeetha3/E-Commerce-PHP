@@ -25,13 +25,13 @@
             $stmt = $pdo->query("SELECT * FROM products");
             while ($product = $stmt->fetch()) {
                 echo "
-                    <div class='col-md-4'>
+                    <div class='col-md-4 mb-6'>
                         <div class='card mb-4 p-4'>
                             <img src='../uploads/{$product['image']}' class='card-img-top' alt='{$product['name']}'>
                             <div class='card-body'>
                                 <h5 class='card-title'>{$product['name']}</h5>
                                 <p class='card-text'>\${$product['price']}</p>
-                                <a href='#' class='btn' style='background-color: #757A5A ; border:none; color: white'>Buy Now</a>
+                                <a href='add_to_cart.php?id={$product['id']}' class='btn' style='background-color: #757A5A ; border:none; color: white'>Buy Now</a>
                             </div>
                         </div>
                     </div>";

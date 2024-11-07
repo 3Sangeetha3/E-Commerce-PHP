@@ -1,7 +1,21 @@
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+
 body {
   margin: 0;
   padding: 0;
   padding-top: 100px !important;
+}
+
+/* Main container should grow to take available space */
+body > .container.my-5,
+body > .container.py-6.my-6 {
+    flex-grow: 1;
 }
 
 /* Navbar styles */
@@ -49,4 +63,12 @@ body {
   width: 36px;
   height: 36px;
   display: inline-block;
+}
+
+/* Style the footer */
+footer {
+  background-color: #332D2D;
+  color: #F5EDE1;
+  padding: 15px;
+  text-align: center;
 }
