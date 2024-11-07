@@ -27,7 +27,7 @@
     <?php include 'components/navbar.php'; ?>
 
     <!-- Hero Section -->
-    <div class="container">
+    <div class="container my-4 py-4">
         <div class="row d-flex align-items-center">
             <div class="col-md-6 text-center text-md-start text-dark">
                 <h1>Welcome to Koza</h1>
@@ -39,6 +39,30 @@
             </div>
         </div>
     </div>
+
+    <div class="container my-4 py-4">
+    <h2 style="color: #FF7F50;" class="mt-5 mb-5">Featured Products</h2>
+    <div class="row">
+        <?php
+        require 'config/config.php';
+        $stmt = $pdo->query("SELECT * FROM products LIMIT 3");
+        while ($product = $stmt->fetch()) {
+            echo "
+                <div class='col-md-4'>
+                    <div class='card mb-4 p-4'>
+                        <img src='uploads/{$product['image']}' class='card-img-top' alt='{$product['name']}'>
+                        <div class='card-body'>
+                            <h5 class='card-title' style='color:#A14B2E; font-weight: bold; font-size: 26px'>{$product['name']}</h5>
+                            <p class='card-text'>\${$product['price']}</p>
+                            <a href='pages/products.php' class='btn' style='background-color: #757A5A ; border:none; color: white'>View More</a>
+                        </div>
+                    </div>
+                </div>";
+        }
+        ?>
+    </div>
+</div>
+
 
     <!-- Footer -->
     <?php include 'components/footer.php'; ?>
