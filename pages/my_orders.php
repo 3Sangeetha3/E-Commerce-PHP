@@ -61,7 +61,7 @@ $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo date('d M Y, H:i', strtotime($order['order_date'])); ?></td>
                                 <td><?php echo htmlspecialchars($order['status']); ?></td>
                                 <td>
-                                    <a href="order_details.php?order_id=<?php echo $order['order_id']; ?>" class="btn btn-primary btn-sm">View Details</a>
+                                    <a href="order_details.php?order_id=<?php echo $order['order_id']; ?>" class="btn btn-primary btn-sm" style="background-color: #FF7F50; border:none; color: white; padding: 10px">View Details</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
