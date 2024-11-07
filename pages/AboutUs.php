@@ -19,16 +19,12 @@
   <?php
   // Include the configuration file
   require_once '../config/config.php';
+  session_start();
   $current_page = basename($_SERVER['PHP_SELF']);
   ?>
 
   <!-- Navbar -->
   <?php include '../components/navbar.php'; ?>
-
-  <?php
-  session_start();
-  ?>
-  <?php $current_page = 'AboutUs.php'; ?>
 
 
   <!-- About Us Page -->

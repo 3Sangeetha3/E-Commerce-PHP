@@ -44,6 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Insert the user into the database
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
         if ($stmt->execute([$name, $email, $hashed_password])) {
+            $_SESSION['user_id'] = $pdo->lastInsertId();
+            $_SESSION['user_name'] = $name;
+            $_SESSION['user_email'] = $email;
             $_SESSION['success'] = "Signup successful! Welcome to koza.";
             header("Location: ../index.php");
             exit();

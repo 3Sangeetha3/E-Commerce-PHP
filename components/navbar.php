@@ -1,5 +1,11 @@
 <!-- components/navbar.php -->
- 
+
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+?>
+
 <!-- animate css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -20,16 +26,52 @@
         <li class="nav-item">
           <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>" href="/E-commerce/pages/contact.php">Contact Us</a>
         </li>
+
+        <!-- Conditional Welcome and Logout -->
+        <?php if (isset($_SESSION['user_name'])): ?>
+          <li class="nav-item">
+            <a class="nav-link text-warning" href="#">👋🏻 <?php echo htmlspecialchars($_SESSION['user_name']); ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/E-commerce/pages/logout.php">
+              <img src="/E-commerce/assets/images/logout.svg" alt="Logout" class="logout-icon" style="width: 32px; height: 32px;">
+            </a>
+          </li>
+        <?php else: ?>
+          <!-- Sign In and Sign Up only shown if user is not logged in -->
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'signIn.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signIn.php">Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'signUp.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signUp.php">Sign Up</a>
+          </li>
+        <?php endif; ?>
+
         <li class="nav-item">
-          <a class="nav-link <?php echo ($current_page == 'signIn.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signIn.php">Sign In</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($current_page == 'signUp.php') ? 'active' : ''; ?>" href="/E-commerce/pages/signUp.php">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($current_page == 'cart.php') ? 'active' : ''; ?>" href="/E-commerce/pages/cart.php">Cart</a>
+          <a class="nav-link animate__animated animate__flip<?php echo ($current_page == 'cart.php') ? 'active' : ''; ?>" href="/E-commerce/pages/cart.php" id="cartLink">
+            <img src="/E-commerce/assets/images/cart.svg" alt="Cart" class="cart-icon" style="width: 32px; height: 32px;">
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- JavaScript for animation -->
+<script>
+  function animateCartIcon() {
+    const cartLink = document.getElementById('cartLink');
+
+    cartLink.classList.remove('animate__flip');
+    void cartLink.offsetWidth;
+    cartLink.classList.add('animate__flip');
+
+    setTimeout(() => {
+      cartLink.classList.remove('animate__flip');
+    }, 1000);
+  }
+
+  setInterval(animateCartIcon, 10000);
+
+  animateCartIcon();
+</script>

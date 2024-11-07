@@ -44,5 +44,9 @@ body {
 }
 
 
-
-/* SignIn page */
+/* logout */
+#Logout {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}

@@ -18,6 +18,8 @@
     // Include the configuration file
     require_once '../config/config.php';
     $current_page = basename($_SERVER['PHP_SELF']);
+    $name = $_SESSION['user_name'] ?? '';
+    $email = $_SESSION['user_email'] ?? '';
     ?>
 
     <!-- Navbar -->
@@ -32,15 +34,15 @@
                 <form action="../backend/process_contact.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" placeholder="Enter your name" class="form-control form-control-sm" id="name" name="name" required style="width: 75%;">
+                        <input type="text" placeholder="Enter your name" class="form-control form-control-sm" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" <?php echo $name ? 'readonly' : ''; ?> required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" placeholder="Enter your Email" class="form-control form-control-sm" id="email" name="email" required style="width: 75%;">
+                        <input type="email" placeholder="Enter your email" class="form-control form-control-sm" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" <?php echo $email ? 'readonly' : ''; ?> required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea placeholder="Enter your message" class="form-control form-control-sm" id="message" name="message" required style="width: 75%;"></textarea>
+                        <textarea placeholder="Enter your message" class="form-control form-control-sm" id="message" name="message" required></textarea>
                     </div>
                     <button type="submit" class="btn text-light" style="background-color: #FF7F50;">Submit</button>
                 </form>

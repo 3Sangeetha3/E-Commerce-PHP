@@ -16,15 +16,13 @@
 <?php
 // Include the configuration file
 require_once '../config/config.php';
+session_start();
 $current_page = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!-- Navbar -->
 <?php include '../components/navbar.php'; ?>
 
-<?php
-session_start();
-?>
 
 <!-- Sign In Section -->
 <div class="container my-5">
