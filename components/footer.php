@@ -1,5 +1,5 @@
 <!-- footer.php -->
-<footer class="bg-dark text-light text-center text-lg fixed-bottom">
+<footer class="bg-dark text-light text-center text-lg">
     <div class="container p-4">
         <div class="row">
             <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
@@ -10,7 +10,7 @@
                 <h5 class="text-uppercase">Links</h5>
                 <ul class="list-unstyled mb-0">
                     <li><a href="../index.php" class="text-light">Home</a></li>
-                    <li><a href="#" class="text-light">Shop</a></li>
+                    <li><a href="/E-commerce/pages/products.php" class="text-light">Shop</a></li>
                     <li><a href="/E-commerce/pages/AboutUs.php" class="text-light">About Us</a></li>
                     <li><a href="/E-commerce/pages/contact.php" class="text-light">Contact Us</a></li>
                     <li><a href="/E-commerce/pages/signIn.php" class="text-light">Sign In</a></li>
