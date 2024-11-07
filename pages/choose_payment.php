@@ -33,12 +33,13 @@ foreach ($_SESSION['cart'] as $item) {
 
 <!-- Payment Method Selection Section -->
 <div class="container my-5">
-    <div class="row">
+    <div class="row align-items-center"> <!-- Align items vertically in the center -->
+        <!-- Left Column: Payment Method Form -->
         <div class="col-md-6 my-5 animate__animated animate__slideInLeft">
             <h2 class="text-dark mt-5 mb-3" style="color: #FF7F50;">Choose Your Payment Method</h2>
 
             <!-- Payment Method Selection Form -->
-            <form id="paymentForm" action="" method="POST">
+            <form action="process_payment_selection.php" method="POST">
                 <div class="form-check m-4">
                     <input class="form-check-input" type="radio" name="payment_method" value="razorpay" id="razorpay" required>
                     <label class="form-check-label" for="razorpay">
@@ -70,26 +71,9 @@ foreach ($_SESSION['cart'] as $item) {
             <?php endif; ?>
         </div>
 
+        <!-- Right Column: Payment Image -->
         <div class="col-md-6 p-0">
             <img src="../assets/images/payment-method.svg" class="img-fluid animate__animated animate__slideInRight" alt="Payment Method">
-        </div>
-    </div>
-</div>
-
-<!-- Modal for Order Success -->
-<div class="modal fade" id="orderPlacedModal" tabindex="-1" aria-labelledby="orderPlacedModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="orderPlacedModalLabel">Order Placed Successfully!</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Your order has been successfully placed. You will receive a confirmation shortly.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
         </div>
     </div>
 </div>
@@ -99,24 +83,6 @@ foreach ($_SESSION['cart'] as $item) {
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    // JavaScript to handle form submission
-    document.getElementById('paymentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-       
-        var paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
-
-    
-        var myModal = new bootstrap.Modal(document.getElementById('orderPlacedModal'));
-        myModal.show();
-
-        setTimeout(function() {
-            window.location.href = '../pages/my_orders.php';
-        }, 10000);
-    });
-</script>
 
 </body>
 </html>
