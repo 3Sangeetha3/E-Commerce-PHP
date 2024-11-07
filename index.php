@@ -35,7 +35,7 @@
                 <a href="#" id="shopNowButton" class="btn text-light animate__animated animate__jello" style="background-color: #FF7F50;">Shop Now</a>
             </div>
             <div class="col-md-6 text-center">
-                <img src="assets/images/image1.svg" class="img-fluid" alt="Leather Products">
+                <img src="assets/images/image1.svg" class="img-fluid animate__animated animate__bounceInDown" alt="Leather Products">
             </div>
         </div>
     </div>
