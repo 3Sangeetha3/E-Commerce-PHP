@@ -47,9 +47,6 @@ if (session_status() === PHP_SESSION_NONE) {
           <li class="nav-item">
             <a class="nav-link <?php echo ($current_page == 'orders.php') ? 'active' : ''; ?>" href="/E-commerce/pages/orders.php">My Orders</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($current_page == 'profile.php') ? 'active' : ''; ?>" href="/E-commerce/pages/profile.php">Profile</a>
-          </li>
         <?php endif; ?>
 
         <!-- Welcome and Logout Links -->
