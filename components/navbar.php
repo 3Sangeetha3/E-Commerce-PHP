@@ -35,9 +35,6 @@ if (session_status() === PHP_SESSION_NONE) {
             <a class="nav-link <?php echo ($current_page == 'add_product.php') ? 'active' : ''; ?>" href="/E-commerce/admin/add_product.php">Add Product</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($current_page == 'manage_users.php') ? 'active' : ''; ?>" href="/E-commerce/admin/manage_orders.php">Manage orders</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link <?php echo ($current_page == 'admin_panel.php') ? 'active' : ''; ?>" href="/E-commerce/pages/admin_panel.php">Admin Panel</a>
           </li>
         <?php endif; ?>
