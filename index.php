@@ -16,9 +16,9 @@
 
 <body class="bg-[#F5EDE1]">
     <?php
+    session_start();
     // Include the configuration file
     require_once 'config/config.php';
-    session_start();
     $current_page = basename($_SERVER['PHP_SELF']);
     ?>
 
