@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit();
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $default_role = 'user';
 
         // Insert the user into the database
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
@@ -47,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_id'] = $pdo->lastInsertId();
             $_SESSION['user_name'] = $name;
             $_SESSION['user_email'] = $email;
+            $_SESSION['user_role'] = $default_role;
             $_SESSION['success'] = "Signup successful! Welcome to koza.";
             header("Location: ../index.php");
             exit();

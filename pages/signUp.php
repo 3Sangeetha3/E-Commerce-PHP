@@ -1,4 +1,3 @@
-<!-- pages/signup.php -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,12 +42,23 @@
                         <input type="password" placeholder="Enter your password" class="form-control form-control-sm" id="password" name="password" required style="width: 75%;">
                     </div>
 
+                    <!-- User Role Dropdown (Visible to Admins only) -->
+                    <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">User Role</label>
+                            <select class="form-control form-control-sm" id="role" name="role" required style="width: 75%;">
+                                <option value="user" selected>User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    <?php endif; ?>
+
                     <!-- Display error message -->
                     <?php if (isset($_SESSION['error'])): ?>
                         <div class="alert alert-danger mt-3">
                             <?php
                             echo $_SESSION['error'];
-                            unset($_SESSION['error']); // Clear the error after displaying
+                            unset($_SESSION['error']);
                             ?>
                         </div>
                     <?php endif; ?>

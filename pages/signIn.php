@@ -1,4 +1,3 @@
-<!-- signIn.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,12 +40,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 </div>
                 <button type="submit" class="btn text-light" style="background-color: #FF7F50;">Sign In</button>
             </form>
+
             <!-- Display error message -->
             <?php if (isset($_SESSION['error'])): ?>
                 <div id="flash-error" class="alert alert-danger mt-3">
                     <?php 
                         echo $_SESSION['error'];
-                        unset($_SESSION['error']); // Clear the error after displaying
+                        unset($_SESSION['error']);
                     ?>
                 </div>
             <?php endif; ?>
@@ -59,11 +59,11 @@ $current_page = basename($_SERVER['PHP_SELF']);
     </div>
 </div>
 
-
 <!-- Footer -->
 <?php include '../components/footer.php'; ?>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

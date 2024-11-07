@@ -1,5 +1,3 @@
-<!-- components/navbar.php -->
-
 <?php
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
@@ -26,6 +24,13 @@ if (session_status() === PHP_SESSION_NONE) {
         <li class="nav-item">
           <a class="nav-link <?php echo ($current_page == 'contact.php') ? 'active' : ''; ?>" href="/E-commerce/pages/contact.php">Contact Us</a>
         </li>
+
+        <!-- Add Product Link (Visible only for Admins) -->
+        <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+          <li class="nav-item">
+            <a class="nav-link <?php echo ($current_page == 'add_product.php') ? 'active' : ''; ?>" href="/E-commerce/admin/add_product.php">Add Product</a>
+          </li>
+        <?php endif; ?>
 
         <!-- Conditional Welcome and Logout -->
         <?php if (isset($_SESSION['user_name'])): ?>
