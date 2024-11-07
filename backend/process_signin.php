@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['user_role'] = $user['role'];
 
             if ($user['role'] === 'admin') {
-                header("Location: ../admin/admin_panel.php");
+                header("Location: ../pages/admin_panel.php");
             } else {
                 header("Location: ../index.php");
             }
