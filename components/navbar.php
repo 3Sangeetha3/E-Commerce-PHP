@@ -20,6 +20,9 @@ if (session_status() === PHP_SESSION_NONE) {
           <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="/E-commerce/index.php">Home</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link <?php echo ($current_page == 'products.php') ? 'active' : ''; ?>" href="/E-commerce/pages/products.php">Shop</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link <?php echo ($current_page == 'AboutUs.php') ? 'active' : ''; ?>" href="/E-commerce/pages/AboutUs.php">About Us</a>
         </li>
         <li class="nav-item">

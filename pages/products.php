@@ -26,7 +26,7 @@
             while ($product = $stmt->fetch()) {
                 echo "
                     <div class='col-md-4'>
-                        <div class='card mb-4'>
+                        <div class='card mb-4 p-4'>
                             <img src='../uploads/{$product['image']}' class='card-img-top' alt='{$product['name']}'>
                             <div class='card-body'>
                                 <h5 class='card-title'>{$product['name']}</h5>
