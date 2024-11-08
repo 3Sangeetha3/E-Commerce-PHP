@@ -27,7 +27,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <div class="container my-5">
     <div class="row">
         <div class="col-md-6 my-5 animate__animated animate__slideInLeft">
-            <h2 class="text-dark mt-5 mb-3">Sign In</h2>
+            <h2 class="text-dark mt-5 mb-3" style="color:#FF7F50">Sign In</h2>
 
             <form action="../backend/process_signin.php" method="POST">
                 <div class="mb-3">

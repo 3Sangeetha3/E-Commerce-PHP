@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $role = $_POST['role'];
+    $is_admin = ($role === 'admin') ? 1 : 0;
 
     // Initialize an error array to store multiple error messages
     $errors = [];
@@ -43,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
         // Insert the user into the database
-        $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-        if ($stmt->execute([$name, $email, $hashed_password])) {
+        $stmt = $pdo->prepare("INSERT INTO users (name, email, password, role, is_admin) VALUES (?, ?, ?, ?, ?)");
+        if ($stmt->execute([$name, $email, $hashed_password, $role, $is_admin])) {
             $_SESSION['user_id'] = $pdo->lastInsertId();
             $_SESSION['user_name'] = $name;
             $_SESSION['user_email'] = $email;
