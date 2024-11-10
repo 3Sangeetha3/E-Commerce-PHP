@@ -33,9 +33,9 @@ if (!$order) {
     exit();
 }
 
-// Retrieve the items in the order
+// Retrieve the items in the order (fetching price from the products table)
 $stmtItems = $pdo->prepare("
-    SELECT oi.product_id, oi.quantity, oi.price, p.name, p.image
+    SELECT oi.product_id, oi.quantity, p.price, p.name, p.image
     FROM order_items oi
     JOIN products p ON oi.product_id = p.id
     WHERE oi.order_id = ?
