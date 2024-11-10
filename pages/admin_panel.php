@@ -16,19 +16,19 @@
         background-color: white;
     }
     h2 {
-        color: #FF7F50; /* Accent Color */
+        color: #FF7F50;
         font-size: 2rem;
     }
     .list-group-item {
-        background-color: #BFBABA; /* Light Gray */
-        color: #332D2D; /* Dark Text Color */
-        font-size: 1.1rem; /* Increased font size */
+        background-color: #BFBABA;
+        color: #332D2D;
+        font-size: 1.1rem;
         padding: 15px 20px;
         border: none;
         transition: background-color 0.3s ease;
-        margin-bottom: 15px; /* Space between items */
-        border-radius: 8px; /* Rounded corners for card effect */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+        margin-bottom: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .list-group-item a {
         text-decoration: none;
@@ -36,9 +36,9 @@
         display: block;
     }
     .list-group-item:hover {
-        background-color: #757A5A; /* Hover color */
-        color: #F5EDE1; /* Light text for contrast on hover */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        background-color: #757A5A;
+        color: #F5EDE1;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
     }
     .image-section img {
         width: 100%;
