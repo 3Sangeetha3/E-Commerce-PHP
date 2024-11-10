@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -8,9 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt = $pdo->prepare("UPDATE products SET name = ?, price = ? WHERE id = ?");
     if ($stmt->execute([$name, $price, $product_id])) {
-        header('Location: admin_panel.php?success=Product updated');
+        $_SESSION['message'] = "Product updated successfully.";
+        $_SESSION['msg_type'] = "success";
     } else {
-        header('Location: admin_panel.php?error=Failed to update product');
+        $_SESSION['message'] = "Failed to update product.";
+        $_SESSION['msg_type'] = "danger";
     }
+    
+    // Correct redirect path
+    header('Location: update_product.php');
+    exit();
 }
 ?>
